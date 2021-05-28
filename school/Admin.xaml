@@ -6,15 +6,26 @@
       xmlns:local="clr-namespace:school"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Admin">
+      Title="Admin" FontFamily="Comic Sans Ms">
 
     <Grid Background="#fff">
-        
+
         <ScrollViewer>
             <StackPanel Name="MSP" Visibility="Visible">
                 <StackPanel>
                     <Image Source="/imeges/school_logo.png" Height="40"/>
                 </StackPanel>
+                <Button Name="SortUp" Content="По возрастанию" BorderBrush="#04a0ff" BorderThickness="3px" Background="#fff" Padding="5" Width="240" Foreground="#000" FontWeight="Bold" Margin="240 10" Click="SortUp_Click"/>
+                <Button Name="SortDown" Content="По убыванию" BorderBrush="#04a0ff" BorderThickness="3px" Background="#fff" Padding="5" Width="240" Foreground="#000" FontWeight="Bold" Margin="240 1" Click="SortDown_Click"/>
+                <ComboBox Name="CBFilter" Margin="10" Width="240" Height="30" SelectionChanged="CBFilter_SelectionChanged">
+                    <ComboBoxItem Content="0%-5%"/>
+                    <ComboBoxItem Content="5%-15%"/>
+                    <ComboBoxItem Content="15%-30%"/>
+                    <ComboBoxItem Content="30%-70%"/>
+                    <ComboBoxItem Content="70%-100%"/>
+                    <ComboBoxItem Content="Все записи"/>
+                </ComboBox>
+                <TextBox Name="TBPoisk" TextChanged="TBPoisk_TextChanged" Margin="10" Height="20"/>
                 <StackPanel>
                     <DataGrid Name="DGServises" AutoGenerateColumns="False" HorizontalAlignment="Left" IsReadOnly="False" CanUserAddRows="False" FontSize="16px">
                         <DataGrid.Columns>
@@ -29,16 +40,16 @@
                                                 </StackPanel>
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Initialized="TextBlock_Initialized_Cost" Margin="0 0 6px 0"/>
-                                                    <TextBlock Margin="0 0 5px 0"> Рублей за</TextBlock>
-                                                    <TextBlock Initialized="TextBlock_Initialized_Duration" Margin="0 0 5px 0"/>
+                                                    <TextBlock Margin="0 0 5px 0"> Рублей </TextBlock>
+                                                    <TextBlock Initialized="TextBlock_Initialized_Duration" Margin="0 0 5px 0" />
                                                 </StackPanel>
                                                 <StackPanel>
-                                                    <TextBlock Initialized="TextBlock_Initialized_Discount"/>
+                                                    <TextBlock Initialized="TextBlock_Initialized_Discount" />
                                                 </StackPanel>
                                                 <StackPanel Orientation="Horizontal">
-                                                    <Button Name="BReg" Margin="0 30px 15px 0" Width="130px" Content="Редактировать" Initialized="Button_Initialized_Red" Click="BReg_Click"/>
-                                                    <Button Name="BDel" Margin="0 30px 15px 0" Width="130px" Content="Удалить" Initialized="Button_Initialized_Del" Click="BDel_Click" />
-                                                    <Button Name="BNZ" Margin="0 30px 15px 0" Width="130px" Content="Новый заказ" Initialized="Button_Initialized_Add" Click="BNZ_Click" />
+                                                    <Button Name="BReg" Margin="0 30px 15px 0" Width="140px" Content="Редактировать" Initialized="Button_Initialized_Red" Click="BReg_Click" BorderBrush="#04a0ff" BorderThickness="3px" Background="#fff" Padding="5" Foreground="#000" FontWeight="Bold"/>
+                                                    <Button Name="BDel" Margin="0 30px 15px 0" Width="130px" Content="Удалить" Initialized="Button_Initialized_Del" Click="BDel_Click" BorderBrush="#04a0ff" BorderThickness="3px" Background="#fff" Padding="5"  Foreground="#000" FontWeight="Bold" />
+                                                    <Button Name="BNZ" Margin="0 30px 15px 0" Width="130px" Content="Новый заказ" Initialized="Button_Initialized_Add" Click="BNZ_Click" BorderBrush="#04a0ff" BorderThickness="3px" Background="#fff" Padding="5"  Foreground="#000" FontWeight="Bold" />
                                                 </StackPanel>
                                             </StackPanel>
                                         </StackPanel>
@@ -58,9 +69,9 @@
             <TextBox Name="TBRTime"/>
             <TextBox Name="TBRSale"/>
             <TextBox Name="TBRImage"/>
-            <Button Name="RImage" Content="Изменить изображение" Click="RImage_Click"/>
-            <Button Name="BRReg" Content="Редактировать услугу" Click="BRReg_Click"/>
-            <Button Name="BRBack" Content="Назад" Click="BRBack_Click"/>
+            <Button Name="RImage" Content="Изменить изображение" Click="RImage_Click" BorderBrush="#04a0ff" BorderThickness="3px" Background="#fff" Padding="5" Width="265" Foreground="#000" FontWeight="Bold" Margin="10"/>
+            <Button Name="BRReg" Content="Редактировать услугу" Click="BRReg_Click" BorderBrush="#04a0ff" BorderThickness="3px" Background="#fff" Padding="5" Width="265" Foreground="#000" FontWeight="Bold" Margin="5"/>
+            <Button Name="BRBack" Content="Назад" Click="BRBack_Click" BorderBrush="#04a0ff" BorderThickness="3px" Background="#fff" Padding="5" Width="265" Foreground="#000" FontWeight="Bold" Margin="5"/>
         </StackPanel>
         <StackPanel Name="SPAdd" Visibility="Collapsed">
             <TextBox Name="TBATitle"/>
@@ -69,18 +80,22 @@
             <TextBox Name="TBADescription"/>
             <TextBox Name="TBASale"/>
             <TextBox Name="TBAImage"/>
-            <Button Name="BAAdd" Content="Добавить улугу" Click="BAAdd_Click"/>
-            <Button Name="Aimage" Content="Изменить изображение" Click="Aimage_Click"/>
-            <Button Name="BABack" Content="Назад" Click="BABack_Click" />
+            <Button Name="BAAdd" Content="Добавить улугу" Click="BAAdd_Click" BorderBrush="#04a0ff" BorderThickness="3px" Background="#fff" Padding="5" Width="265" Foreground="#000" FontWeight="Bold"/>
+            <Button Name="Aimage" Content="Изменить изображение" Click="Aimage_Click" BorderBrush="#04a0ff" BorderThickness="3px" Background="#fff" Padding="5" Width="265" Foreground="#000" FontWeight="Bold"/>
+            <Button Name="BABack" Content="Назад" Click="BABack_Click" BorderBrush="#04a0ff" BorderThickness="3px" Background="#fff" Padding="5" Width="265" Foreground="#000" FontWeight="Bold" />
         </StackPanel>
         <StackPanel Name="SPNZ" Visibility="Collapsed">
-            <TextBlock Name="TBNTitle"/>
-            <TextBlock Name="TBNTime"/>
-            <DatePicker Name="DP"/>
-            <TextBox Name="TBTime" TextChanged="TBTime_TextChanged"/>
-            <ComboBox Name="CBPeople" SelectionChanged="CBPeople_SelectionChanged"/>
-            <Button Name="BNWrite" Content="Записать" Click="BNWrite_Click" />
-            <Button Name="BNBack" Content="Назад" Click="BNBack_Click"/>
+            <TextBlock Name="TBNTitle" Margin="265 1"/>
+            <TextBlock Name="TBNTime" Margin="265 1"/>
+            <TextBlock Text="Выберите дату" Margin="265 1"/>
+            <DatePicker Name="DP" Margin="265,5,282,5"/>
+            <TextBlock Text="Выберите время" Margin="265 1"/>
+            <TextBox Name="TBTime" TextChanged="TBTime_TextChanged" Margin="265,5,282,5"/>
+            <TextBlock Text="ФИО" Margin="265 1"/>
+            <ComboBox Name="CBPeople" SelectionChanged="CBPeople_SelectionChanged" Margin="265,5,282,5"/>
+            <Button Name="BNWrite" Content="Записать" Click="BNWrite_Click" BorderBrush="#04a0ff" BorderThickness="3px" Background="#fff" Padding="5" Width="265" Foreground="#000" FontWeight="Bold" Margin="240 10" />
+            <Button Name="BNBack" Content="Назад" Click="BNBack_Click" BorderBrush="#04a0ff" BorderThickness="3px" Background="#fff" Padding="5" Width="265" Foreground="#000" FontWeight="Bold"/>
+            
         </StackPanel>
     </Grid>
 </Page>

@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:school"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <!--<Style x:Key="TBfont" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Comic Sans Ms"/>
+        </Style>
+        <Style x:Key="Bfont" TargetType="Button">
+            <Setter Property="FontFamily" Value="Comic Sans Ms"/>
+        </Style>-->
     </Application.Resources>
 </Application>
